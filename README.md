@@ -1,2 +1,2 @@
 # py_for_net
-Python for network
+Скрипты и шпаргалки для работы
