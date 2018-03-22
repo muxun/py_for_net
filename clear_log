@@ -1,0 +1,11 @@
+# чистим логи от лишних энтеров
+
+
+f = open('text.txt')
+r = f.read()
+f.close()
+r = str(r)
+r = r.replace('\n\n',' ')
+f2 = open('text2.txt','w')
+f2.write(r)
+f2.close()
