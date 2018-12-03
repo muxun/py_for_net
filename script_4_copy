@@ -1,0 +1,20 @@
+#!/bin/bash
+#create dir tree fom path_list.txt
+
+ cut -d" " -f1 path_list.txt | cut -d"/" -f1-5 | sort | uniq >> filtred_list
+ for d in $(cat filtred_list)
+ do
+ mkdir -p $d
+ echo "Directory $d created!"
+ done
+
+#copy files
+
+ for i in $(cat filtred_list)
+ do
+ scp -r REMOTE_HOST:$i/* $i
+ echo "files from $i copied!"
+ done
+
+#delete 
+ rm filtred_list
